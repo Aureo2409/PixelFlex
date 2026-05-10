@@ -1908,144 +1908,186 @@
    FOOTER
 ===================================================== */
     footer {
-      background: #0f1320;
-      padding: 64px 0 28px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .footer-top-old {
-      display: grid;
-      grid-template-columns: 1.8fr 1fr 1fr 1fr;
-      gap: 50px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      margin-bottom: 28px;
-    }
-
-    .footer-brand .logo {
-      margin-bottom: 16px;
-    }
-
-    .footer-brand .logo-word {
+      background: #040404;
+      padding: 160px 0 60px;
+      border-top: none;
+      position: relative;
+      overflow: hidden;
       color: #fff;
     }
 
-    .footer-brand .logo-word span {
-      color: var(--green);
+    .footer-arc {
+      position: absolute;
+      top: -300px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150%;
+      height: 400px;
+      border-radius: 50%;
+      box-shadow: 0 120px 100px rgba(42, 109, 217, 0.25), inset 0 -20px 50px rgba(74, 143, 255, 0.4);
+      border-bottom: 4px solid var(--accent);
+      pointer-events: none;
+      filter: blur(2px);
+      z-index: 1;
     }
 
-    .footer-brand .logo-mark {
-      background: rgba(255, 255, 255, 0.08);
+    .footer-content-wrap {
+      position: relative;
+      z-index: 2;
     }
 
-    .footer-brand p {
-      font-size: 0.88rem;
-      color: rgba(255, 255, 255, 0.42);
-      line-height: 1.7;
-      max-width: 270px;
-      margin-bottom: 22px;
+    .footer-main-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 2fr;
+      gap: 80px;
+      margin-bottom: 60px;
     }
 
-    .social-row {
+    .footer-left {
       display: flex;
-      gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
-    .soc-btn {
-      width: 36px;
-      height: 36px;
-      background: rgba(255, 255, 255, 0.07);
-      border-radius: 8px;
+    .footer-left .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      text-decoration: none;
+    }
+
+    .footer-left .logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--green);
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: rgba(255, 255, 255, 0.45);
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-      text-decoration: none;
-      transition: all 0.2s;
     }
 
-    .soc-btn:hover {
-      background: var(--accent);
+    .footer-left .logo-mark svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .footer-left .logo-word {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 800;
       color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-left .logo-word span {
+      color: #fff; /* kept white to match the image */
+    }
+
+    .footer-desc {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+      max-width: 380px;
+      margin-bottom: 32px;
+    }
+
+    .footer-btn {
+      background: linear-gradient(90deg, var(--green), var(--accent));
+      color: #fff;
+      border-radius: 30px;
+      padding: 12px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .footer-btn:hover {
       transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(42, 109, 217, 0.3);
+    }
+    
+    .footer-btn .btn-icon-wrap {
+      background: #fff;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-btn .btn-icon-wrap svg {
+      color: var(--green);
+      width: 14px;
+      height: 14px;
+    }
+
+    .footer-right {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      padding-top: 10px;
     }
 
     .footer-col h5 {
-      font-family: var(--font-head);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.3);
-      margin-bottom: 20px;
+      color: var(--accent);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      text-transform: none;
+      letter-spacing: 0;
     }
 
     .footer-col ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 16px;
+      padding: 0;
     }
 
-    .footer-col ul a {
-      font-size: 0.88rem;
-      color: rgba(255, 255, 255, 0.5);
+    .footer-col ul a, .footer-col ul span {
+      font-size: 0.95rem;
+      color: #fff;
+      text-decoration: none;
       transition: color 0.2s;
     }
 
     .footer-col ul a:hover {
-      color: #fff;
-    }
-
-    .footer-contact-row {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .fc-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.86rem;
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .fc-item .fci {
-      width: 28px;
-      height: 28px;
-      background: rgba(255, 255, 255, 0.07);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      flex-shrink: 0;
+      color: rgba(255, 255, 255, 0.7);
     }
 
     .footer-bottom {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
+      justify-content: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 24px;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
     }
 
-    .footer-bottom p {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.25);
+    @media (max-width: 900px) {
+      .footer-main-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+      .footer-arc {
+        width: 250%;
+      }
     }
 
-    .footer-human {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.35);
-      font-style: italic;
-    }
-
-    .footer-human span {
-      color: var(--accent);
+    @media (max-width: 600px) {
+      .footer-right {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
     }
 
     /* =====================================================
@@ -2954,12 +2996,12 @@
      FOOTER
 ===================================================== -->
   <footer>
-    <div class="container">
-      <!-- Footer Row 1: Brand + Nav + Serviços -->
-      <div class="footer-top-grid">
+    <div class="footer-arc"></div>
+    <div class="container footer-content-wrap">
+      <div class="footer-main-grid">
 
-        <!-- Brand -->
-        <div class="footer-brand">
+        <!-- Left Side: Brand & CTA -->
+        <div class="footer-left">
           <a href="#inicio" class="logo">
             <div class="logo-mark">
               <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5">
@@ -2968,71 +3010,52 @@
             </div>
             <span class="logo-word">Pixel<span>Flex</span></span>
           </a>
-          <p>
-            Transformamos empresas angolanas em autoridades digitais — sites, landing pages e apps feitos com cuidado.
+          <p class="footer-desc">
+            Agência digital criativa focada no ser humano, criando experiências digitais claras, pensadas e significativas.
           </p>
-          <div class="social-row">
-            <a href="https://www.instagram.com/pixelflex2026?igsh=MW03anhvZXB2bjh2bQ==" target="_blank" class="soc-btn"
-              title="Instagram">ig</a>
-            <a href="https://wa.me/244976344207" target="_blank" class="soc-btn" title="WhatsApp">wa</a>
+          <a href="#contacto" class="footer-btn">
+            Começar 
+            <div class="btn-icon-wrap">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        </div>
+
+        <!-- Right Side: Links -->
+        <div class="footer-right">
+          <!-- Explorar -->
+          <div class="footer-col">
+            <h5>Explorar</h5>
+            <ul>
+              <li><a href="#sobre-nos">Sobre Nós</a></li>
+              <li><a href="#pacotes">Serviços</a></li>
+              <li><a href="#manutencao">Manutenção</a></li>
+              <li><a href="#depoimentos">Depoimentos</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+
+          <!-- Seguir -->
+          <div class="footer-col">
+            <h5>Seguir</h5>
+            <ul>
+              <li><a href="https://www.instagram.com/pixelflex2026?igsh=MW03anhvZXB2bjh2bQ==" target="_blank">Instagram</a></li>
+              <li><a href="https://wa.me/244976344207" target="_blank">WhatsApp</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Behance</a></li>
+            </ul>
+          </div>
+
+          <!-- Contacto -->
+          <div class="footer-col">
+            <h5>Contacto</h5>
+            <ul>
+              <li><a href="mailto:hello@pixelflex.ao">hello@pixelflex.ao</a></li>
+              <li><span>Luanda, Angola</span></li>
+            </ul>
           </div>
         </div>
 
-        <!-- Navegação -->
-        <div class="footer-col">
-          <h5>Navegação</h5>
-          <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre-nos">Sobre Nós</a></li>
-            <li><a href="#pacotes">Pacotes</a></li>
-            <li><a href="#manutencao">Suporte</a></li>
-            <li><a href="#depoimentos">Depoimentos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-        </div>
-
-        <!-- Serviços -->
-        <div class="footer-col">
-          <h5>Serviços</h5>
-          <ul>
-            <li><a href="#pacotes">Landing Pages</a></li>
-            <li><a href="#pacotes">Sites Institucionais</a></li>
-            <li><a href="#pacotes">Lojas Online</a></li>
-            <li><a href="#pacotes">Apps Sob Medida</a></li>
-            <li><a href="#manutencao">Manutenção Mensal</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Footer Row 2: Contactos (full width, horizontal) -->
-      <div class="footer-contacts-section">
-        <h5 class="footer-contacts-title">Contacto</h5>
-        <div class="footer-contacts-list">
-          <div class="fc-item">
-            <div class="fci">📱</div>
-            <a href="https://wa.me/244976344207" class="fc-link-wa">976 344 207</a>
-          </div>
-          <div class="fc-item">
-            <div class="fci">📸</div>
-            <a href="https://www.instagram.com/pixelflex2026?igsh=MW03anhvZXB2bjh2bQ==" target="_blank"
-              class="fc-link-ig">@pixelflex2026</a>
-          </div>
-          <div class="fc-item">
-            <div class="fci">📍</div>
-            <span class="fc-text">Luanda, Angola</span>
-          </div>
-          <div class="fc-item">
-            <div class="fci">🕐</div>
-            <span class="fc-text">Seg–Sáb · 08h–18h</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© 2025 PixelFlex. Todos os direitos reservados.</p>
-        <p class="footer-human">Feito com <span>cuidado</span> por pessoas reais em Luanda 🇦🇴</p>
-        <p>Política de Privacidade · Termos de Uso</p>
       </div>
     </div>
   </footer>
