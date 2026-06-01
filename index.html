@@ -817,6 +817,75 @@
       align-items: center;
     }
 
+    /* Hero Grid & Image style */
+    .hero-grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 580px;
+      height: auto;
+      border-radius: var(--r-md);
+      box-shadow: 0 16px 40px rgba(9, 13, 24, 0.5), 0 0 30px rgba(74, 143, 255, 0.15);
+      border: 1px solid rgba(74, 143, 255, 0.1);
+      animation: float-illustration 6s ease-in-out infinite;
+    }
+
+    @keyframes float-illustration {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .hero-grid-container {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 60px;
+      }
+      
+      .hero-content {
+        max-width: 100%;
+        padding: 40px 0;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid-container {
+        text-align: center;
+      }
+      .hero-content {
+        margin: 0 auto;
+        padding: 60px 24px 20px !important;
+        text-align: center;
+      }
+      .hero-cta-row {
+        justify-content: center;
+      }
+      .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-image {
+        max-width: 480px;
+      }
+    }
+
     /* Human trust signals */
     .hero-trust {
       position: absolute;
@@ -2568,7 +2637,7 @@
         <div class="hero-blob-2"></div>
       </div>
 
-      <div class="container">
+      <div class="container hero-grid-container">
         <div class="hero-content">
           <div class="tag-pill">
             <div class="dot"></div> Design de Interfaces · Websites · Sistemas
@@ -2591,6 +2660,9 @@
             <a href="https://www.instagram.com/pixelflex2026?igsh=MW03anhvZXB2bjh2bQ==" target="_blank"
               class="btn btn-ghost-white">📸 @pixelflex2026</a>
           </div>
+        </div>
+        <div class="hero-image-wrap reveal reveal-delay-1">
+          <img src="hero-image.png" alt="PixelFlex Analytics & Sistemas" class="hero-image">
         </div>
       </div>
 
