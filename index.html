@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PixelFlex – Soluções que Transformam o Seu Negócio</title>
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
     rel="stylesheet">
   <style>
     /* =====================================================
@@ -59,7 +60,7 @@
       --neon-glow-sm: none;
 
       /* Typography */
-      --font-head: 'Barlow Condensed', sans-serif;
+      --font-head: 'Outfit', sans-serif;
       --font-body: 'Inter', sans-serif;
       --font-mono: 'Share Tech Mono', monospace;
 
@@ -254,7 +255,7 @@
       border-radius: var(--r-pill);
       border: none;
       cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       text-decoration: none;
       white-space: nowrap;
     }
@@ -274,27 +275,29 @@
     }
 
     .btn-primary {
-      background: linear-gradient(90deg, var(--green), var(--accent));
+      background: linear-gradient(135deg, #1e5fcb 0%, #3d82f7 100%);
       color: #fff;
-      box-shadow: 0 8px 26px rgba(42, 109, 217, 0.32), var(--shadow-sm);
+      font-weight: 500;
+      box-shadow: 0 4px 14px rgba(30, 95, 203, 0.25);
     }
 
     .btn-primary:hover {
-      background: linear-gradient(90deg, #245fc0, var(--accent-hover));
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
+      background: linear-gradient(135deg, #1b54b6 0%, #2f73e9 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(30, 95, 203, 0.35);
     }
 
     .btn-green {
-      background: linear-gradient(90deg, var(--green), var(--accent));
+      background: linear-gradient(135deg, #1e5fcb 0%, #3d82f7 100%);
       color: #fff;
-      box-shadow: 0 8px 26px rgba(42, 109, 217, 0.36);
+      font-weight: 500;
+      box-shadow: 0 4px 14px rgba(30, 95, 203, 0.25);
     }
 
     .btn-green:hover {
-      background: linear-gradient(90deg, #245fc0, var(--accent-hover));
-      transform: translateY(-2px);
-      box-shadow: 0 12px 34px rgba(42, 109, 217, 0.5);
+      background: linear-gradient(135deg, #1b54b6 0%, #2f73e9 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(30, 95, 203, 0.35);
     }
 
     .btn-outline {
@@ -392,17 +395,12 @@
     .logo-mark {
       width: 34px;
       height: 34px;
-      background: var(--accent);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-    }
-
-    .logo-mark svg {
-      width: 16px;
-      height: 16px;
+      overflow: hidden;
     }
 
     .logo-word {
@@ -443,7 +441,7 @@
       height: 1.5px;
       border-radius: 2px;
       background: #fff;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .hamburger span:nth-child(1) {
@@ -987,20 +985,22 @@
     }
 
     .svc-card {
-      background: linear-gradient(180deg, rgba(14, 20, 34, 0.96), rgba(12, 16, 32, 0.98));
+      background: rgba(14, 20, 34, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-radius: var(--r-md);
       padding: 36px 28px;
       position: relative;
       overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       box-shadow: var(--shadow-sm);
-      border: 1px solid rgba(74, 143, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .svc-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 14px 42px rgba(0, 0, 0, 0.52), 0 0 0 1px rgba(74, 143, 255, 0.08);
-      border-color: var(--accent);
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      border-color: rgba(74, 143, 255, 0.25);
     }
 
     .svc-card::before {
@@ -1009,15 +1009,14 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--green));
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), #2a6dd9);
       opacity: 0;
-      border-radius: var(--r-md) var(--r-md) 0 0;
-      transition: opacity 0.3s;
+      transition: opacity 0.4s;
     }
 
     .svc-card:hover::before {
-      opacity: 1;
+      opacity: 0.8;
     }
 
     .svc-card::after {
@@ -1027,7 +1026,7 @@
       right: -40px;
       width: 140px;
       height: 140px;
-      background: linear-gradient(135deg, var(--green-xlt), rgba(74, 143, 255, 0.16));
+      background: radial-gradient(circle, rgba(74, 143, 255, 0.05) 0%, transparent 70%);
       border-radius: 50%;
       opacity: 0;
       transition: opacity 0.4s;
@@ -1199,7 +1198,7 @@
       overflow: hidden;
       position: relative;
       box-shadow: var(--shadow-lg);
-      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s;
     }
 
     .pf-flyer:hover {
@@ -2161,7 +2160,7 @@
     .reveal {
       opacity: 0;
       transform: translateY(36px);
-      transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1), transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .reveal.visible {
@@ -2375,7 +2374,7 @@
       border-radius: var(--r-md);
       cursor: pointer;
       text-align: left;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       align-items: center;
       gap: 16px;
@@ -2670,9 +2669,7 @@
     <div class="container">
       <a href="#inicio" class="logo">
         <div class="logo-mark">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-          </svg>
+          <img src="logo.jpg" alt="PixelFlex Logo" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <span class="logo-word">Pixel<span>Flex</span></span>
       </a>
@@ -3646,9 +3643,7 @@
         <div class="footer-left">
           <a href="#inicio" class="logo">
             <div class="logo-mark">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-              </svg>
+              <img src="logo.jpg" alt="PixelFlex Logo" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <span class="logo-word">Pixel<span>Flex</span></span>
           </a>
