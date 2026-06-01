@@ -16,9 +16,36 @@ overlay.addEventListener('click', e => { if (e.target === overlay) closeMenu(); 
 
 // Header scroll shadow
 const hdr = document.getElementById('site-header');
-window.addEventListener('scroll', () => {
-  hdr.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
+if (hdr) {
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+}
+
+// Scroll Spy: Highlight active section in navigation
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.sidebar-link, .menu-link');
+
+const spyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === `#${id}`) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  });
+}, {
+  threshold: 0.15,
+  rootMargin: '-20% 0px -50% 0px'
+});
+
+sections.forEach(section => spyObserver.observe(section));
 
 // Scroll reveal
 const revealObs = new IntersectionObserver((entries) => {

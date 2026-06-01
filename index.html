@@ -551,6 +551,150 @@
     }
 
     /* =====================================================
+   DESKTOP SIDEBAR (Permanent Dashboard style)
+===================================================== */
+    .desktop-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 280px;
+      background: rgba(9, 13, 24, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-right: 1px solid var(--border);
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+      padding: 48px 24px;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo-wrap {
+      margin-bottom: 48px;
+    }
+
+    .sidebar-logo-wrap .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sidebar-link {
+      font-family: var(--font-head);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      padding: 12px 18px;
+      border-radius: var(--r-sm);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      display: block;
+      border-left: 3px solid transparent;
+    }
+
+    .sidebar-link:hover {
+      color: #fff;
+      background: var(--bg-2);
+      border-left-color: rgba(74, 143, 255, 0.4);
+      padding-left: 22px;
+    }
+
+    .sidebar-link.active {
+      color: #fff;
+      background: var(--green-lt);
+      border-left-color: var(--accent);
+      padding-left: 22px;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    .sidebar-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-contact-btn {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      padding: 10px 16px;
+      border-radius: var(--r-sm);
+      border: 1.5px solid var(--border);
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .sidebar-contact-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(74, 143, 255, 0.05);
+    }
+
+    .sidebar-extra-info {
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      text-align: center;
+    }
+
+    /* Responsive visibility toggles */
+    @media (min-width: 1025px) {
+      body {
+        padding-left: 280px;
+      }
+
+      header#site-header {
+        display: none !important;
+      }
+
+      .desktop-sidebar {
+        display: flex;
+      }
+
+      #inicio {
+        padding-top: 0 !important;
+      }
+
+      section {
+        scroll-margin-top: 0px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      body {
+        padding-left: 0;
+      }
+
+      header#site-header {
+        display: flex !important;
+      }
+
+      .desktop-sidebar {
+        display: none !important;
+      }
+
+      section {
+        scroll-margin-top: 68px;
+      }
+    }
+
+    /* =====================================================
    HERO SECTION
 ===================================================== */
     #inicio {
@@ -2339,6 +2483,40 @@
 </head>
 
 <body>
+
+  <!-- =====================================================
+     DESKTOP SIDEBAR (Permanent Dashboard style)
+===================================================== -->
+  <aside class="desktop-sidebar">
+    <div class="sidebar-logo-wrap">
+      <a href="#inicio" class="logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+        </div>
+        <span class="logo-word">Pixel<span>Flex</span></span>
+      </a>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#inicio" class="sidebar-link active">Início</a>
+      <a href="#sobre-nos" class="sidebar-link">Sobre Nós</a>
+      <a href="#servicos-valor" class="sidebar-link">Serviços</a>
+      <a href="#pacotes" class="sidebar-link">Pacotes</a>
+      <a href="#manutencao" class="sidebar-link">Suporte</a>
+      <a href="#depoimentos" class="sidebar-link">Depoimentos</a>
+      <a href="#contacto" class="sidebar-link">Contacto</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-contact-info">
+        <a href="https://wa.me/244976344207" target="_blank" class="sidebar-contact-btn btn-wa">📱 WhatsApp</a>
+        <a href="mailto:info@pixelflex.ao" class="sidebar-contact-btn btn-mail">✉ Email</a>
+      </div>
+      <div class="sidebar-extra-info">
+        <span>📍 Luanda, Angola</span>
+      </div>
+    </div>
+  </aside>
 
   <!-- =====================================================
      HEADER
