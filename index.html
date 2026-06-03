@@ -716,7 +716,7 @@
       position: absolute;
       inset: 0;
       z-index: 0;
-      background: var(--ink);
+      background: var(--bg);
     }
 
     .hero-video-wrap::after {
@@ -2962,6 +2962,9 @@
 ===================================================== -->
     <section id="inicio">
       <div class="hero-video-wrap">
+        <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+          <source src="Faz_vídeo_disso_sem_som_que.mp4" type="video/mp4">
+        </video>
         <div class="hero-blob-1"></div>
         <div class="hero-blob-2"></div>
       </div>
@@ -2991,10 +2994,7 @@
           </div>
         </div>
         <div class="hero-image-wrap reveal reveal-delay-1">
-          <video class="hero-image" autoplay loop muted playsinline>
-            <source src="videohero.mp4" type="video/mp4">
-            Seu navegador não suporta a tag de vídeo.
-          </video>
+          <img src="hero-image.png" alt="PixelFlex Analytics & Sistemas" class="hero-image">
         </div>
       </div>
 
