@@ -24,7 +24,7 @@ if (hdr) {
 
 // Scroll Spy: Highlight active section in navigation
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.sidebar-link, .menu-link');
+const navLinks = document.querySelectorAll('.header-nav-link, .menu-link');
 
 const spyObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
